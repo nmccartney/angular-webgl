@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="stylesheets/screen.css"/>
+  <title>Angular & Webgl</title>
+</head>
+<body>
+<div ng-controller="AppCtrl" id="main-content">
+
+  <div id="content-wrap" ng-click="destroy()">
+
+    <div style="width:900; height:800;" id="interface-img"></div>
+
+    <!--<div class="controls-wrap" ng-show="appModel.currentItem">-->
+      <!--&lt;!&ndash;<p class="comp-title">{{appModel.currentItem.name}}</p>&ndash;&gt;-->
+
+      <!--<div class="info-wrap">-->
+        <!--<div class="controls-info">-->
+          <!--<a href="{{appModel.currentItem.info}}" target="_blank">-->
+            <!--<img src="/assets/img/info.png"/>-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--<a hm-tap="onPrevious(appModel.currentItem)">-->
+        <!--<img src="/assets/img/left-arrow.png" class="controls-left" ng-class="hasPrevious(appModel.currentItem)"/>-->
+      <!--</a>-->
+      <!--<a hm-tap="onNext(appModel.currentItem)">-->
+        <!--<img src="/assets/img/right-arrow.png" class="controls-right" ng-class="hasNext(appModel.currentItem)"/>-->
+      <!--</a>-->
+      <!--<div class="controls-center">-->
+        <!--<a hm-tap="onBack()">-->
+          <!--<img src="/assets/img/down-arrow.png"/>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="layout-controls-wrap" ng-show="!appModel.currentItem">
+      <a ng-click="onSphere()">
+        <div class="controls-left" ng-class="{controlsactive: appModel.isControlActive('sphere')}">sphere</div>
+      </a>
+
+      <a ng-click="onGrid()">
+        <div  class="controls-right" ng-class="{controlsactive: appModel.isControlActive('grid')}">grid</div>
+      </a>
+      <div class="controls-center">
+        <a ng-click="onDisk()">
+          <div ng-class="{controlsactive: appModel.isControlActive('disk')}"> disk</div>
+        </a>
+      </div>
+
+    </div>
+
+    <ng-view id="view-loader"></ng-view>
+  </div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+
+
+
+
+<script src="libs/jquery-1.9.0.js"></script>
+<script src="libs/three/three.js"></script>
+<script src="libs/three/tween.js"></script>
+<script src="libs/three/TrackballControls.js"></script>
+<script src="libs/three/CSS3DRenderer.js"></script>
+<script src="libs/hammer/hammer.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/angular-1.2.11/angular.js"></script>
+<script src="libs/angular-1.2.11/angular-route.min.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+
+
+
+</body>
+</html>
