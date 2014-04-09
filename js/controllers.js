@@ -24,40 +24,6 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $log, AppModel, 
         AppModel.controls.constraintToAxis = "X";
     }
 
-    $scope.onBack = function(){
-        $location.path('nav');
-    }
-
-    $scope.onNext = function(item){
-        var idx = AppModel.items.indexOf(item);
-        var url = AppModel.items[idx + 1].id;
-        $log.info(url);
-        $location.path('experiment/'+url);
-    }
-
-    $scope.onPrevious = function(item){
-        var idx = AppModel.items.indexOf(item);
-        var url = AppModel.items[idx - 1].id;
-        $location.path('experiment/'+url);
-    }
-
-    $scope.hasPrevious = function(item){
-        var idx = AppModel.items.indexOf(item);
-        return (idx > 0)? 'hasPrevious' : 'hasNonePrevious';
-    }
-
-    $scope.hasNext = function(item){
-        var value = 'hasNoneNext';
-        var idx = AppModel.items.indexOf(item);
-        if(idx !== -1 && AppModel.items[idx++] && AppModel.items[idx++].name !== '' ){
-            value = 'hasNext';
-        }
-
-        return value;
-    }
-
-
-
 });
 
 // changes the url path and load the selected experiment
